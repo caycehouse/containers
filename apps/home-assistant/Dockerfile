@@ -34,6 +34,7 @@ RUN \
         eudev-libs \
         ffmpeg \
         git \
+        # Install iputils (ping) for WOL status
         iputils \
         jq \
         libcap \
@@ -46,6 +47,9 @@ RUN \
         openssh-client \
         openssl \
         postgresql-libs \
+        # Install samba-common for rpc shutdown
+        samba-common \
+        samba-common-tools \
         socat \
         tiff \
         tzdata \
