@@ -13,47 +13,58 @@ ENV \
     PIP_BREAK_SYSTEM_PACKAGES=1
 
 ENV UMASK="0002" \
+    TZ="Etc/UTC" \
     CALIBRE_DBPATH=/config
 
 USER root
 WORKDIR /app
 
-#hadolint ignore=DL3018,DL3013
-RUN apk add --no-cache \
+#hadolint ignore=DL3018,DL3013,DL4006
+RUN \
+    apk add --no-cache \
         bash \
         ca-certificates \
+        catatonit \
+        curl \
         ghostscript \
         libldap \
         libsasl \
         libxi \
         libxslt \
+        tzdata \
     && \
     apk add --no-cache --virtual=.build-deps \
         build-base \
-        curl \
         libffi-dev \
-        linux-headers \
+        musl-dev \
         openldap-dev \
     && \
-    # Download calibre-web release
     mkdir -p /app \
-    && curl -fsSL https://github.com/janeczku/calibre-web/archive/${VERSION}.tar.gz \
-    | tar xzf - -C /app --strip-components=1 \
+    && curl -fsSL "https://github.com/janeczku/calibre-web/archive/${VERSION}.tar.gz" \
+        | tar xzf - -C /app --strip-components=1 \
     && \
-    pip install --upgrade --requirement requirements.txt \
-    pip install --upgrade --requirement optional-requirements.txt \
-    && apk del --purge .build-deps \
-    && chown -R root:root /app \
+    pip install uv \
+    && \
+    uv pip install --system --requirement requirements.txt \
+    && \
+    uv pip install --system --requirement optional-requirements.txt \
+    && \
+    chown -R root:root /app \
     && chmod -R 755 /app \
+    && apk del --purge .build-deps \
     && rm -rf \
         /root/.cache \
         /root/.cargo \
         /tmp/*
 
-COPY ./apps/calibre-web/entrypoint.sh /entrypoint.sh
 COPY --from=ghcr.io/cdloh/calibre-bare:7.10.0 / /opt/calibre
+COPY ./apps/calibre-web/entrypoint.sh /entrypoint.sh
 
+USER nobody:nogroup
+WORKDIR /config
 VOLUME [ "/config" ]
+
+ENTRYPOINT ["/usr/bin/catatonit", "--"]
 CMD ["/entrypoint.sh"]
 
 LABEL org.opencontainers.image.source="https://github.com/janeczku/calibre-web"
