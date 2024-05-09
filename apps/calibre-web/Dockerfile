@@ -1,5 +1,3 @@
-FROM ghcr.io/cdloh/calibre-bare:7.10.0@sha256:53b896f7bf35bba5532b5413cd5ba84332c25be58b27b03e25e8a0cfa262ee45 as calibre
-
 FROM docker.io/library/python:3.11-alpine
 
 ARG TARGETPLATFORM
@@ -18,44 +16,42 @@ ENV UMASK="0002" \
     CALIBRE_DBPATH=/config
 
 USER root
+WORKDIR /app
 
-# hadolint ignore=DL3008,DL3015,SC2086
-RUN \
-    apk add --no-cache \
-    bash \
-    ca-certificates \
-    ghostscript \
-    libldap \
-    libsasl \
-    libxi \
-    libxslt \
+#hadolint ignore=DL3018,DL3013
+RUN apk add --no-cache \
+        bash \
+        ca-certificates \
+        ghostscript \
+        libldap \
+        libsasl \
+        libxi \
+        libxslt \
     && \
     apk add --no-cache --virtual=.build-deps \
-    build-base \
-    curl \
-    libffi-dev \
-    linux-headers \
-    openldap-dev \
+        build-base \
+        curl \
+        libffi-dev \
+        linux-headers \
+        openldap-dev \
     && \
     # Download calibre-web release
     mkdir -p /app \
     && curl -fsSL https://github.com/janeczku/calibre-web/archive/${VERSION}.tar.gz \
     | tar xzf - -C /app --strip-components=1 \
-    # Install required python packages
-    && pip install --upgrade pip uv \
-    && uv pip install --system --requirement /app/requirements.txt \
-    && uv pip install --system --requirement /app/optional-requirements.txt \
-    # Cleanup
+    && \
+    pip install --upgrade --requirement requirements.txt \
+    pip install --upgrade --requirement optional-requirements.txt \
     && apk del --purge .build-deps \
+    && chown -R root:root /app \
+    && chmod -R 755 /app \
     && rm -rf \
-    /root/.cache \
-    /root/.cargo \
-    /tmp/* \
-    # Set permissions
-    && chmod -R 755 /app
+        /root/.cache \
+        /root/.cargo \
+        /tmp/*
 
-COPY --from=calibre / /opt/calibre
 COPY ./apps/calibre-web/entrypoint.sh /entrypoint.sh
+COPY --from=ghcr.io/cdloh/calibre-bare:7.10.0 / /opt/calibre
 
 VOLUME [ "/config" ]
 CMD ["/entrypoint.sh"]
