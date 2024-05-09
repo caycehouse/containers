@@ -1,0 +1,14 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/goss-org/goss/master/docs/schema.yaml
+process:
+  python3:
+    running: true
+file:
+  /opt/calibre/ebook-convert:
+    exists: true
+port:
+  tcp6:8083:
+    listening: true
+http:
+  http://localhost:8083/login:
+    status: 200
