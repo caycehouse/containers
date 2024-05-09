@@ -54,7 +54,7 @@ RUN \
     && chmod -R 755 /app
 
 COPY --from=calibre / /opt/calibre
-COPY ./entrypoint.sh /entrypoint.sh
+COPY ./apps/calibre-web/entrypoint.sh /entrypoint.sh
 
 VOLUME [ "/config" ]
 CMD ["/entrypoint.sh"]
