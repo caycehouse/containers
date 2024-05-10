@@ -3,9 +3,6 @@
 process:
   python3:
     running: true
-file:
-  /opt/calibre/ebook-convert:
-    exists: true
 port:
   tcp6:8083:
     listening: true
