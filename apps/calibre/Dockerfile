@@ -19,10 +19,12 @@ RUN \
     && \
     apt-get install -y --no-install-recommends --no-install-suggests \
         catatonit \
+        ca-certificates \
+        curl \
         libegl1 \
         libfontconfig1 \
+        libglx0 \
         libopengl0 \
-        libxdamage1 \
         libxkbcommon0 \
         python3 \
         xz-utils \
