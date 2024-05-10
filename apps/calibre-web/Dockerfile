@@ -57,7 +57,6 @@ RUN \
         /root/.cargo \
         /tmp/*
 
-COPY --from=ghcr.io/cdloh/calibre-bare:7.10.0 / /opt/calibre
 COPY ./apps/calibre-web/entrypoint.sh /entrypoint.sh
 
 USER nobody:nogroup
