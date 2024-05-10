@@ -19,10 +19,10 @@ ARG CHANNEL
 
 ENV \
     COMPlus_EnableDiagnostics="0" \
-    PROWLARR__INSTANCE_NAME="Prowlarr" \
-    PROWLARR__BRANCH="${CHANNEL}" \
-    PROWLARR__PORT="9696" \
-    PROWLARR__ANALYTICS_ENABLED="False"
+    RADARR__INSTANCE_NAME="Radarr" \
+    RADARR__BRANCH="${CHANNEL}" \
+    RADARR__PORT="7878" \
+    RADARR__ANALYTICS_ENABLED="False"
 
 ENV UMASK="0002" \
     TZ="Etc/UTC"
@@ -52,18 +52,18 @@ RUN \
     && \
     mkdir -p /app/bin \
     && \
-    curl -fsSL "https://prowlarr.servarr.com/v1/update/${PROWLARR__BRANCH}/updatefile?version=${VERSION}&os=linuxmusl&runtime=netcore&arch=${ARCH}" \
+    curl -fsSL "https://radarr.servarr.com/v1/update/${RADARR__BRANCH}/updatefile?version=${VERSION}&os=linuxmusl&runtime=netcore&arch=${ARCH}" \
     | tar xzf - -C /app/bin --strip-components=1 \
     && \
-    rm -rf /app/bin/Prowlarr.Update \
+    rm -rf /app/bin/Radarr.Update \
     && \
-    printf "UpdateMethod=docker\nBranch=%s\nPackageVersion=%s\nPackageAuthor=[caycehouse](https://github.com/caycehouse)\n" "${PROWLARR__BRANCH}" "${VERSION}" > /app/package_info \
+    printf "UpdateMethod=docker\nBranch=%s\nPackageVersion=%s\nPackageAuthor=[caycehouse](https://github.com/caycehouse)\n" "${RADARR__BRANCH}" "${VERSION}" > /app/package_info \
     && chown -R root:root /app \
     && chmod -R 755 /app \
     && rm -rf /tmp/*
 
-COPY ./apps/prowlarr/config.xml.tmpl /app/config.xml.tmpl
-COPY ./apps/prowlarr/entrypoint.sh /entrypoint.sh
+COPY ./apps/radarr/config.xml.tmpl /app/config.xml.tmpl
+COPY ./apps/radarr/entrypoint.sh /entrypoint.sh
 COPY --from=envsubst /go/bin/envsubst /usr/local/bin/envsubst
 
 USER nobody:nogroup
@@ -73,4 +73,4 @@ VOLUME ["/config"]
 ENTRYPOINT ["/usr/bin/catatonit", "--"]
 CMD ["/entrypoint.sh"]
 
-LABEL org.opencontainers.image.source="https://github.com/Prowlarr/Prowlarr"
+LABEL org.opencontainers.image.source="https://github.com/Radarr/Radarr"
