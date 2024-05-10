@@ -7,5 +7,6 @@ fi
 exec \
     /app/calibre-server \
         --port=${CALIBRE_PORT} \
+        --enable-auth \
         ${CALIBRE_LIBRARY} \
         "$@"
