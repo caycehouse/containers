@@ -108,5 +108,19 @@ Each Image will be built with a `rolling` tag, along with tags specific to it's 
 
 Container | Channel | Image
 --- | --- | ---
+[bazarr](https://github.com/caycehouse/containers/pkgs/container/bazarr) | stable | ghcr.io/caycehouse/bazarr
 [calibre-web](https://github.com/caycehouse/containers/pkgs/container/calibre-web) | stable | ghcr.io/caycehouse/calibre-web
 [home-assistant](https://github.com/caycehouse/containers/pkgs/container/home-assistant) | stable | ghcr.io/caycehouse/home-assistant
+[par2cmdline-turbo](https://github.com/caycehouse/containers/pkgs/container/par2cmdline-turbo) | stable | ghcr.io/caycehouse/par2cmdline-turbo
+[plex](https://github.com/caycehouse/containers/pkgs/container/plex) | stable | ghcr.io/caycehouse/plex
+[plex-beta](https://github.com/caycehouse/containers/pkgs/container/plex-beta) | beta | ghcr.io/caycehouse/plex-beta
+[postgres-init](https://github.com/caycehouse/containers/pkgs/container/postgres-init) | stable | ghcr.io/caycehouse/postgres-init
+[prowlarr](https://github.com/caycehouse/containers/pkgs/container/prowlarr) | master | ghcr.io/caycehouse/prowlarr
+[prowlarr-develop](https://github.com/caycehouse/containers/pkgs/container/prowlarr-develop) | develop | ghcr.io/caycehouse/prowlarr-develop
+[prowlarr-nightly](https://github.com/caycehouse/containers/pkgs/container/prowlarr-nightly) | nightly | ghcr.io/caycehouse/prowlarr-nightly
+[radarr](https://github.com/caycehouse/containers/pkgs/container/radarr) | master | ghcr.io/caycehouse/radarr
+[radarr-develop](https://github.com/caycehouse/containers/pkgs/container/radarr-develop) | develop | ghcr.io/caycehouse/radarr-develop
+[radarr-nightly](https://github.com/caycehouse/containers/pkgs/container/radarr-nightly) | nightly | ghcr.io/caycehouse/radarr-nightly
+[sabnzbd](https://github.com/caycehouse/containers/pkgs/container/sabnzbd) | stable | ghcr.io/caycehouse/sabnzbd
+[sonarr](https://github.com/caycehouse/containers/pkgs/container/sonarr) | main | ghcr.io/caycehouse/sonarr
+[sonarr-develop](https://github.com/caycehouse/containers/pkgs/container/sonarr-develop) | develop | ghcr.io/caycehouse/sonarr-develop
