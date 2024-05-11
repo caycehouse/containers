@@ -124,3 +124,4 @@ Container | Channel | Image
 [sabnzbd](https://github.com/caycehouse/containers/pkgs/container/sabnzbd) | stable | ghcr.io/caycehouse/sabnzbd
 [sonarr](https://github.com/caycehouse/containers/pkgs/container/sonarr) | main | ghcr.io/caycehouse/sonarr
 [sonarr-develop](https://github.com/caycehouse/containers/pkgs/container/sonarr-develop) | develop | ghcr.io/caycehouse/sonarr-develop
+[spt](https://github.com/caycehouse/containers/pkgs/container/spt) | stable | ghcr.io/caycehouse/spt
