@@ -32,8 +32,7 @@ RUN \
     && npm install \
     && npm run build:release -- --arch="$ARCH" --platform=linux
 
-# TODO: Switch this to alpine later.
-FROM docker.io/library/ubuntu:24.04
+FROM docker.io/library/alpine:3.19
 
 COPY --from=spt /tmp/srv/project/build /opt/server
 
