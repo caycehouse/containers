@@ -12,7 +12,7 @@ ENV UMASK="0002" \
     TZ="Etc/UTC"
 
 USER root
-WORKDIR /opt/server
+WORKDIR /opt/srv
 
 COPY --from=ghcr.io/caycehouse/spt:3.8.1 /opt/server .
 
@@ -40,7 +40,7 @@ RUN \
     && git checkout \
     && npm install \
     && rm -rf .git \
-    && chmod -R 755 /opt/server \
+    && chmod -R 755 /opt/srv \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && apt-get autoremove -y \
     && apt-get clean \
