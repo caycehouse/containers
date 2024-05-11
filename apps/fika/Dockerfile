@@ -52,7 +52,6 @@ RUN \
 
 COPY ./apps/fika/entrypoint.sh /entrypoint.sh
 
-USER nobody:nogroup
 WORKDIR /opt/server
 VOLUME ["/opt/server"]
 
