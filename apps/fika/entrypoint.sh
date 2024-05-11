@@ -3,7 +3,7 @@
 #!/bin/bash
 echo "FIKA Docker"
 
-if [ -d "/opt/server" ]; then
+if [ -d "/opt/srv" ]; then
     start=$(date +%s)
     echo "Started copying files to your volume/directory.. Please wait."
     cp -r /opt/srv/* /opt/server/
