@@ -1,0 +1,9 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/goss-org/goss/master/docs/schema.yaml
+port:
+  tcp6:6969:
+    listening: true
+  tcp6:6970:
+    listening: true
+  tcp6:6971:
+    listening: true
