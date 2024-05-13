@@ -14,7 +14,7 @@ ENV UMASK="0002" \
 USER root
 WORKDIR /opt/srv
 
-COPY --from=ghcr.io/caycehouse/spt:3.8.1 /opt/server .
+COPY --from=ghcr.io/caycehouse/spt:3.8.2 /opt/server .
 
 # hadolint ignore=DL3008,DL3015,SC2039,SC2086
 RUN \
