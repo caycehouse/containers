@@ -1,10 +1,8 @@
 ---
-# https://github.com/goss-org/goss/blob/master/docs/manual.md#file
 file:
   /entrypoint.sh:
     exists: true
     mode: "0755"
-# https://github.com/goss-org/goss/blob/master/docs/manual.md#mount
 mount:
   /tmp:
     exists: true
