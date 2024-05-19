@@ -13,6 +13,6 @@ COPY --chmod=0755 --chown=65000:65000 ./apps/talosctl/entrypoint.sh /usr/local/b
 
 USER 65000:65000
 VOLUME ["/tmp"]
-ENTRYPOINT ["/usr/local/bin/base-entrypoint.sh", "/usr/local/bin/entrypoint.sh", "/usr/bin/talosctl"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh", "/usr/bin/talosctl"]
 
 LABEL org.opencontainers.image.source="https://github.com/siderolabs/talos/"
