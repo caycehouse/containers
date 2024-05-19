@@ -126,3 +126,4 @@ Container | Channel | Image
 [sonarr](https://github.com/caycehouse/containers/pkgs/container/sonarr) | main | ghcr.io/caycehouse/sonarr
 [sonarr-develop](https://github.com/caycehouse/containers/pkgs/container/sonarr-develop) | develop | ghcr.io/caycehouse/sonarr-develop
 [spt](https://github.com/caycehouse/containers/pkgs/container/spt) | stable | ghcr.io/caycehouse/spt
+[talosctl](https://github.com/caycehouse/containers/pkgs/container/talosctl) | stable | ghcr.io/caycehouse/talosctl
