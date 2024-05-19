@@ -1,0 +1,24 @@
+---
+# https://github.com/goss-org/goss/blob/master/docs/manual.md#group
+group:
+  abc:
+    exists: true
+    gid: 65000
+# https://github.com/goss-org/goss/blob/master/docs/manual.md#file
+file:
+  /usr/local/bin/base-entrypoint.sh:
+    exists: true
+    mode: "0755"
+  /usr/local/bin/entrypoint.sh:
+    exists: true
+    mode: "0755"
+# https://github.com/goss-org/goss/blob/master/docs/manual.md#mount
+mount:
+  /tmp:
+    exists: true
+# https://github.com/goss-org/goss/blob/master/docs/manual.md#user
+user:
+  abc:
+    exists: true
+    uid: 65000
+    gid: 65000
