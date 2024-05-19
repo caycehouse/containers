@@ -11,9 +11,6 @@ RUN apk add --no-cache bash curl yq \
 
 COPY ./apps/talosctl/entrypoint.sh /entrypoint.sh
 
-USER nobody:nogroup
-VOLUME ["/tmp"]
-
 ENTRYPOINT ["/entrypoint.sh", "/usr/bin/talosctl"]
 
 LABEL org.opencontainers.image.source="https://github.com/siderolabs/talos/"

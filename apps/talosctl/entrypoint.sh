@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if [ -n "${TALOS_NODE_IP}" ]; then
-    TALOS_IMAGE_NAME="$(talosctl -n "${TALOS_NODE_IP}" read /system/state/config.yaml | yq '.machine.install.image' | sed 's@null@ghcr.io/siderolabs/installer@g' | sed 's@:.*@@g')"
+if [ -n "${NODE_IP}" ]; then
+    TALOS_IMAGE_NAME="$(talosctl -n "${NODE_IP}" read /system/state/config.yaml | yq -r '.machine.install | select(.) | .image' | sed 's@:.*@@g')"
 
     export TALOS_IMAGE_NAME
 fi
