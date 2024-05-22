@@ -25,7 +25,7 @@ RUN \
     ;; \
     esac \
     && \
-    git clone --depth 1 --branch $VERSION https://dev.sp-tarkov.com/SPT-AKI/Server.git srv \
+    git clone --depth 1 --branch $VERSION https://dev.sp-tarkov.com/SPT/Server.git srv \
     && cd srv/project \
     && git checkout \
     && git-lfs pull \
