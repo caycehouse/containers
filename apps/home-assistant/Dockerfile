@@ -38,6 +38,7 @@ RUN \
         iputils \
         jq \
         libcap \
+        libpcap \
         libturbojpeg \
         libstdc++ \
         libxslt \
