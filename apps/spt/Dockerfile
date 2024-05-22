@@ -32,7 +32,7 @@ RUN \
     && npm install \
     && npm run build:release -- --arch="$ARCH" --platform=linux
 
-FROM docker.io/library/alpine:3.19
+FROM docker.io/library/alpine:3.20
 
 COPY --from=spt /tmp/srv/project/build /opt/server
 
