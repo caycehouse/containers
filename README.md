@@ -110,7 +110,6 @@ Container | Channel | Image
 --- | --- | ---
 [bazarr](https://github.com/caycehouse/containers/pkgs/container/bazarr) | stable | ghcr.io/caycehouse/bazarr
 [calibre-web](https://github.com/caycehouse/containers/pkgs/container/calibre-web) | stable | ghcr.io/caycehouse/calibre-web
-[fika](https://github.com/caycehouse/containers/pkgs/container/fika) | stable | ghcr.io/caycehouse/fika
 [home-assistant](https://github.com/caycehouse/containers/pkgs/container/home-assistant) | stable | ghcr.io/caycehouse/home-assistant
 [par2cmdline-turbo](https://github.com/caycehouse/containers/pkgs/container/par2cmdline-turbo) | stable | ghcr.io/caycehouse/par2cmdline-turbo
 [plex](https://github.com/caycehouse/containers/pkgs/container/plex) | stable | ghcr.io/caycehouse/plex
@@ -125,5 +124,4 @@ Container | Channel | Image
 [sabnzbd](https://github.com/caycehouse/containers/pkgs/container/sabnzbd) | stable | ghcr.io/caycehouse/sabnzbd
 [sonarr](https://github.com/caycehouse/containers/pkgs/container/sonarr) | main | ghcr.io/caycehouse/sonarr
 [sonarr-develop](https://github.com/caycehouse/containers/pkgs/container/sonarr-develop) | develop | ghcr.io/caycehouse/sonarr-develop
-[spt](https://github.com/caycehouse/containers/pkgs/container/spt) | stable | ghcr.io/caycehouse/spt
 [talosctl](https://github.com/caycehouse/containers/pkgs/container/talosctl) | stable | ghcr.io/caycehouse/talosctl
