@@ -24,6 +24,7 @@ WORKDIR /app
 RUN \
     apk add --no-cache \
         bash \
+        binutils \
         bluez \
         bluez-deprecated \
         bluez-libs \
@@ -34,12 +35,11 @@ RUN \
         eudev-libs \
         ffmpeg \
         git \
-        # Install iputils (ping) for WOL status
         iputils \
         jq \
         libcap \
-        libpcap \
-        libturbojpeg \
+        libjpeg-turbo-dev \
+        libpcap-dev \
         libstdc++ \
         libxslt \
         mariadb-connector-c \
