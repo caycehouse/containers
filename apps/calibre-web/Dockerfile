@@ -28,6 +28,7 @@ RUN \
         curl \
         ghostscript \
         libldap \
+        libmagic \
         libsasl \
         libxi \
         libxslt \
