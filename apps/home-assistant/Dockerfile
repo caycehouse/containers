@@ -30,12 +30,14 @@ RUN \
         bluez-libs \
         ca-certificates \
         catatonit \
+        coreutils \
         cups-libs \
         curl \
         eudev-libs \
         ffmpeg \
         git \
         iputils \
+        jo \
         jq \
         libcap \
         libjpeg-turbo-dev \
@@ -53,6 +55,7 @@ RUN \
         samba-common-tools \
         socat \
         tiff \
+        trurl \
         tzdata \
         unzip \
     && \

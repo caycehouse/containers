@@ -1,4 +1,4 @@
-FROM docker.io/library/python:3.12-alpine3.18
+FROM docker.io/library/python:3.12-alpine
 
 ARG TARGETPLATFORM
 ARG VERSION
@@ -25,13 +25,16 @@ RUN \
     bash \
     ca-certificates \
     catatonit \
+    coreutils \
     curl \
     ffmpeg \
+    jo \
     jq \
     libxml2 \
     libxslt \
     mediainfo \
     nano \
+    trurl \
     tzdata \
     unzip \
     libpq \
@@ -49,7 +52,7 @@ RUN \
     && \
     rm -rf /app/bin/bin \
     && \
-    printf "UpdateMethod=docker\nBranch=master\nPackageVersion=%s\nPackageAuthor=[onedr0p](https://github.com/onedr0p)\n" "${VERSION}" > /app/package_info \
+    printf "UpdateMethod=docker\nBranch=master\nPackageVersion=%s\nPackageAuthor=[caycehouse](https://github.com/caycehouse)\n" "${VERSION}" > /app/package_info \
     && pip install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.20/ \
     --requirement /app/bin/requirements.txt \
     --requirement /app/bin/postgres-requirements.txt \

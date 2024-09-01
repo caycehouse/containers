@@ -2,7 +2,7 @@
 version: "3"
 
 vars:
-  LABELS_CONFIG_FILE: "{{.ROOT_DIR}}/.github/labels.yaml"
+  LABELS_CONFIG_FILE: '{{.ROOT_DIR}}/.github/labels.yaml'
 
 tasks:
   default:
