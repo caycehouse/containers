@@ -125,3 +125,19 @@ Container | Channel | Image
 [sonarr](https://github.com/caycehouse/containers/pkgs/container/sonarr) | main | ghcr.io/caycehouse/sonarr
 [sonarr-develop](https://github.com/caycehouse/containers/pkgs/container/sonarr-develop) | develop | ghcr.io/caycehouse/sonarr-develop
 [talosctl](https://github.com/caycehouse/containers/pkgs/container/talosctl) | stable | ghcr.io/caycehouse/talosctl
+
+
+## Deprecations
+
+Containers here can be **deprecated** at any point, this could be for any reason described below.
+
+1. The upstream application is **no longer actively developed**
+2. The upstream application has an **official upstream container** that follows closely to the mission statement described here
+3. The upstream application has been **replaced with a better alternative**
+4. The **maintenance burden** of keeping the container here **is too bothersome**
+
+**Note**: Deprecated containers will remained published to this repo for 6 months after which they will be pruned.
+
+## Credits
+
+A lot of inspiration and ideas are thanks to the hard work of [onedr0p](https://github.com/onedr0p), [hotio.dev](https://hotio.dev/) and [linuxserver.io](https://www.linuxserver.io/) contributors.
