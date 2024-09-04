@@ -108,6 +108,7 @@ Each Image will be built with a `rolling` tag, along with tags specific to it's 
 
 Container | Channel | Image
 --- | --- | ---
+[actions-runner](https://github.com/caycehouse/containers/pkgs/container/actions-runner) | stable | ghcr.io/caycehouse/actions-runner
 [bazarr](https://github.com/caycehouse/containers/pkgs/container/bazarr) | stable | ghcr.io/caycehouse/bazarr
 [calibre-web](https://github.com/caycehouse/containers/pkgs/container/calibre-web) | stable | ghcr.io/caycehouse/calibre-web
 [home-assistant](https://github.com/caycehouse/containers/pkgs/container/home-assistant) | stable | ghcr.io/caycehouse/home-assistant
