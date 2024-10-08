@@ -1,6 +1,6 @@
 <!---
 NOTE: AUTO-GENERATED FILE
-to edit this file, instead edit its template at: ./github/scripts/templates/README.md.j2
+to edit this file, instead edit its template at: ./scripts/templates/README.md.j2
 -->
 <div align="center">
 
@@ -89,11 +89,10 @@ Some applications do not support defining configuration via environment variable
 
 1. First read the Kubernetes docs on [defining command and arguments for a Container](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/).
 2. Look up the documentation for the application and find a argument you would like to set.
-3. Set the argument in the `args` section, be sure to include `entrypoint.sh` as the first arg and any application specific arguments thereafter.
+3. Set the extra arguments in the `args` section like below.
 
     ```yaml
     args:
-      - /entrypoint.sh
       - --port
       - "8080"
     ```
@@ -108,23 +107,23 @@ Each Image will be built with a `rolling` tag, along with tags specific to it's 
 
 Container | Channel | Image
 --- | --- | ---
-[actions-runner](https://github.com/caycehouse/containers/pkgs/container/actions-runner) | stable | ghcr.io/caycehouse/actions-runner
-[bazarr](https://github.com/caycehouse/containers/pkgs/container/bazarr) | stable | ghcr.io/caycehouse/bazarr
-[calibre-web](https://github.com/caycehouse/containers/pkgs/container/calibre-web) | stable | ghcr.io/caycehouse/calibre-web
-[home-assistant](https://github.com/caycehouse/containers/pkgs/container/home-assistant) | stable | ghcr.io/caycehouse/home-assistant
-[plex](https://github.com/caycehouse/containers/pkgs/container/plex) | stable | ghcr.io/caycehouse/plex
-[plex-beta](https://github.com/caycehouse/containers/pkgs/container/plex-beta) | beta | ghcr.io/caycehouse/plex-beta
-[postgres-init](https://github.com/caycehouse/containers/pkgs/container/postgres-init) | stable | ghcr.io/caycehouse/postgres-init
-[prowlarr](https://github.com/caycehouse/containers/pkgs/container/prowlarr) | master | ghcr.io/caycehouse/prowlarr
-[prowlarr-develop](https://github.com/caycehouse/containers/pkgs/container/prowlarr-develop) | develop | ghcr.io/caycehouse/prowlarr-develop
-[prowlarr-nightly](https://github.com/caycehouse/containers/pkgs/container/prowlarr-nightly) | nightly | ghcr.io/caycehouse/prowlarr-nightly
-[radarr](https://github.com/caycehouse/containers/pkgs/container/radarr) | master | ghcr.io/caycehouse/radarr
-[radarr-develop](https://github.com/caycehouse/containers/pkgs/container/radarr-develop) | develop | ghcr.io/caycehouse/radarr-develop
-[radarr-nightly](https://github.com/caycehouse/containers/pkgs/container/radarr-nightly) | nightly | ghcr.io/caycehouse/radarr-nightly
-[sabnzbd](https://github.com/caycehouse/containers/pkgs/container/sabnzbd) | stable | ghcr.io/caycehouse/sabnzbd
-[sonarr](https://github.com/caycehouse/containers/pkgs/container/sonarr) | main | ghcr.io/caycehouse/sonarr
-[sonarr-develop](https://github.com/caycehouse/containers/pkgs/container/sonarr-develop) | develop | ghcr.io/caycehouse/sonarr-develop
-[talosctl](https://github.com/caycehouse/containers/pkgs/container/talosctl) | stable | ghcr.io/caycehouse/talosctl
+[actions-runner](https://github.com/caycehouse/pkgs/container/actions-runner) | stable | ghcr.io/caycehouse/actions-runner
+[bazarr](https://github.com/caycehouse/pkgs/container/bazarr) | stable | ghcr.io/caycehouse/bazarr
+[calibre-web](https://github.com/caycehouse/pkgs/container/calibre-web) | stable | ghcr.io/caycehouse/calibre-web
+[home-assistant](https://github.com/caycehouse/pkgs/container/home-assistant) | stable | ghcr.io/caycehouse/home-assistant
+[plex](https://github.com/caycehouse/pkgs/container/plex) | stable | ghcr.io/caycehouse/plex
+[plex-beta](https://github.com/caycehouse/pkgs/container/plex-beta) | beta | ghcr.io/caycehouse/plex-beta
+[postgres-init](https://github.com/caycehouse/pkgs/container/postgres-init) | stable | ghcr.io/caycehouse/postgres-init
+[prowlarr](https://github.com/caycehouse/pkgs/container/prowlarr) | master | ghcr.io/caycehouse/prowlarr
+[prowlarr-develop](https://github.com/caycehouse/pkgs/container/prowlarr-develop) | develop | ghcr.io/caycehouse/prowlarr-develop
+[prowlarr-nightly](https://github.com/caycehouse/pkgs/container/prowlarr-nightly) | nightly | ghcr.io/caycehouse/prowlarr-nightly
+[radarr](https://github.com/caycehouse/pkgs/container/radarr) | master | ghcr.io/caycehouse/radarr
+[radarr-develop](https://github.com/caycehouse/pkgs/container/radarr-develop) | develop | ghcr.io/caycehouse/radarr-develop
+[radarr-nightly](https://github.com/caycehouse/pkgs/container/radarr-nightly) | nightly | ghcr.io/caycehouse/radarr-nightly
+[sabnzbd](https://github.com/caycehouse/pkgs/container/sabnzbd) | stable | ghcr.io/caycehouse/sabnzbd
+[sonarr](https://github.com/caycehouse/pkgs/container/sonarr) | main | ghcr.io/caycehouse/sonarr
+[sonarr-develop](https://github.com/caycehouse/pkgs/container/sonarr-develop) | develop | ghcr.io/caycehouse/sonarr-develop
+[talosctl](https://github.com/caycehouse/pkgs/container/talosctl) | stable | ghcr.io/caycehouse/talosctl
 
 
 ## Deprecations
