@@ -49,14 +49,9 @@ RUN \
     uv pip install --system --requirement requirements.txt \
     && \
     uv pip install --system --requirement optional-requirements.txt \
-    && \
-    chown -R root:root /app \
-    && chmod -R 755 /app \
-    && apk del --purge .build-deps \
-    && rm -rf \
-        /root/.cache \
-        /root/.cargo \
-        /tmp/*
+    && chown -R root:root /app && chmod -R 755 /app \
+    && pip uninstall --yes uv && apk del --purge .build-deps \
+    && rm -rf /root/.cache /root/.cargo /tmp/*
 
 COPY ./apps/calibre-web/entrypoint.sh /entrypoint.sh
 
@@ -64,7 +59,6 @@ USER nobody:nogroup
 WORKDIR /config
 VOLUME [ "/config" ]
 
-ENTRYPOINT ["/usr/bin/catatonit", "--"]
-CMD ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/catatonit", "--", "/entrypoint.sh"]
 
 LABEL org.opencontainers.image.source="https://github.com/janeczku/calibre-web"
