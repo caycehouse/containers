@@ -112,7 +112,6 @@ Container | Channel | Image
 [bazarr](https://github.com/caycehouse/containers/pkgs/container/bazarr) | stable | ghcr.io/caycehouse/bazarr
 [calibre-web](https://github.com/caycehouse/containers/pkgs/container/calibre-web) | stable | ghcr.io/caycehouse/calibre-web
 [home-assistant](https://github.com/caycehouse/containers/pkgs/container/home-assistant) | stable | ghcr.io/caycehouse/home-assistant
-[par2cmdline-turbo](https://github.com/caycehouse/containers/pkgs/container/par2cmdline-turbo) | stable | ghcr.io/caycehouse/par2cmdline-turbo
 [plex](https://github.com/caycehouse/containers/pkgs/container/plex) | stable | ghcr.io/caycehouse/plex
 [plex-beta](https://github.com/caycehouse/containers/pkgs/container/plex-beta) | beta | ghcr.io/caycehouse/plex-beta
 [postgres-init](https://github.com/caycehouse/containers/pkgs/container/postgres-init) | stable | ghcr.io/caycehouse/postgres-init
