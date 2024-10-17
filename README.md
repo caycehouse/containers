@@ -123,7 +123,6 @@ Container | Channel | Image
 [sabnzbd](https://github.com/caycehouse/pkgs/container/sabnzbd) | stable | ghcr.io/caycehouse/sabnzbd
 [sonarr](https://github.com/caycehouse/pkgs/container/sonarr) | main | ghcr.io/caycehouse/sonarr
 [sonarr-develop](https://github.com/caycehouse/pkgs/container/sonarr-develop) | develop | ghcr.io/caycehouse/sonarr-develop
-[talosctl](https://github.com/caycehouse/pkgs/container/talosctl) | stable | ghcr.io/caycehouse/talosctl
 
 
 ## Deprecations
