@@ -123,6 +123,7 @@ Container | Channel | Image
 [sabnzbd](https://github.com/caycehouse/pkgs/container/sabnzbd) | stable | ghcr.io/caycehouse/sabnzbd
 [sonarr](https://github.com/caycehouse/pkgs/container/sonarr) | main | ghcr.io/caycehouse/sonarr
 [sonarr-develop](https://github.com/caycehouse/pkgs/container/sonarr-develop) | develop | ghcr.io/caycehouse/sonarr-develop
+[tautulli](https://github.com/caycehouse/pkgs/container/tautulli) | master | ghcr.io/caycehouse/tautulli
 
 
 ## Deprecations
