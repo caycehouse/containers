@@ -10,10 +10,10 @@ WORKDIR /app
 #hadolint ignore=DL3018
 RUN \
     apk add --no-cache \
-    bash \
-    ca-certificates \
-    catatonit \
-    postgresql16-client~"${VERSION}"
+        bash \
+        ca-certificates \
+        catatonit \
+        postgresql16-client~"${VERSION}"
 
 COPY ./apps/postgres-init/entrypoint.sh /entrypoint.sh
 

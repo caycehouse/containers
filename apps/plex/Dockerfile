@@ -26,29 +26,29 @@ RUN \
     apt-get update \
     && \
     apt-get install -y --no-install-recommends --no-install-suggests \
-    bash \
-    ca-certificates \
-    catatonit \
-    coreutils \
-    curl \
-    jo \
-    jq \
-    nano \
-    tzdata \
-    uuid-runtime \
-    xmlstarlet \
+        bash \
+        ca-certificates \
+        catatonit \
+        coreutils \
+        curl \
+        jo \
+        jq \
+        nano \
+        tzdata \
+        uuid-runtime \
+        xmlstarlet \
     && \
     case "${TARGETPLATFORM}" in \
-    'linux/amd64') \
-    export ARCH='amd64'; \
-    ;; \
-    'linux/arm64') \
-    export ARCH='arm64'; \
-    ;; \
+        'linux/amd64') \
+            export ARCH='amd64'; \
+        ;; \
+        'linux/arm64') \
+            export ARCH='arm64'; \
+        ;; \
     esac \
     && \
     curl -fsSL -o /tmp/plex.deb \
-    "https://downloads.plex.tv/plex-media-server-new/${VERSION}/debian/plexmediaserver_${VERSION}_${ARCH}.deb" \
+        "https://downloads.plex.tv/plex-media-server-new/${VERSION}/debian/plexmediaserver_${VERSION}_${ARCH}.deb" \
     && \
     dpkg -i --force-confold /tmp/plex.deb \
     && chmod -R 755 "${PLEX_MEDIA_SERVER_HOME}" \
@@ -63,4 +63,4 @@ USER nobody:nogroup
 WORKDIR /config
 VOLUME ["/config"]
 
-ENTRYPOINT [ "/usr/bin/catatonit", "--", "/entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/catatonit", "--", "/entrypoint.sh"]
