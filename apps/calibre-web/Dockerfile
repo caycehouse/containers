@@ -1,4 +1,4 @@
-FROM docker.io/library/python:3.12-alpine
+FROM docker.io/library/python:3.12-alpine3.20
 
 ARG TARGETPLATFORM
 ARG VERSION
@@ -42,7 +42,7 @@ RUN \
         openldap-dev \
     && \
     mkdir -p /app \
-    && curl -fsSL "https://github.com/janeczku/calibre-web/archive/${VERSION}.tar.gz" \
+    && curl -fsSL "https://github.com/janeczku/calibre-web/archive/0.6.24.tar.gz" \
         | tar xzf - -C /app --strip-components=1 \
     && \
     pip install uv \
