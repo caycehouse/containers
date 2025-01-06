@@ -110,6 +110,7 @@ Container | Channel | Image
 [actions-runner](https://github.com/caycehouse/containers/pkgs/container/actions-runner) | stable | ghcr.io/caycehouse/actions-runner
 [bazarr](https://github.com/caycehouse/containers/pkgs/container/bazarr) | stable | ghcr.io/caycehouse/bazarr
 [calibre-web](https://github.com/caycehouse/containers/pkgs/container/calibre-web) | stable | ghcr.io/caycehouse/calibre-web
+[cni-plugins](https://github.com/caycehouse/containers/pkgs/container/cni-plugins) | stable | ghcr.io/caycehouse/cni-plugins
 [home-assistant](https://github.com/caycehouse/containers/pkgs/container/home-assistant) | stable | ghcr.io/caycehouse/home-assistant
 [plex](https://github.com/caycehouse/containers/pkgs/container/plex) | stable | ghcr.io/caycehouse/plex
 [plex-beta](https://github.com/caycehouse/containers/pkgs/container/plex-beta) | beta | ghcr.io/caycehouse/plex-beta
