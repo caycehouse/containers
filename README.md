@@ -113,7 +113,6 @@ Container | Channel | Image
 [cni-plugins](https://github.com/caycehouse/containers/pkgs/container/cni-plugins) | stable | ghcr.io/caycehouse/cni-plugins
 [home-assistant](https://github.com/caycehouse/containers/pkgs/container/home-assistant) | stable | ghcr.io/caycehouse/home-assistant
 [plex](https://github.com/caycehouse/containers/pkgs/container/plex) | stable | ghcr.io/caycehouse/plex
-[plex-beta](https://github.com/caycehouse/containers/pkgs/container/plex-beta) | beta | ghcr.io/caycehouse/plex-beta
 [postgres-init](https://github.com/caycehouse/containers/pkgs/container/postgres-init) | stable | ghcr.io/caycehouse/postgres-init
 [prowlarr](https://github.com/caycehouse/containers/pkgs/container/prowlarr) | master | ghcr.io/caycehouse/prowlarr
 [prowlarr-develop](https://github.com/caycehouse/containers/pkgs/container/prowlarr-develop) | develop | ghcr.io/caycehouse/prowlarr-develop
