@@ -52,6 +52,8 @@ RUN \
         libpq-dev \
         libxml2-dev \
         libxslt-dev \
+    && curl -fsSL -o /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64" \
+    && chmod +x /usr/local/bin/yq \
     && \
     curl -fsSL -o /tmp/app.zip "https://github.com/morpheus65535/bazarr/releases/download/v${VERSION}/bazarr.zip" \
     && unzip -q /tmp/app.zip -d /app/bin \
