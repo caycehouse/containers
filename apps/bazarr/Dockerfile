@@ -65,6 +65,7 @@ RUN \
     && apk del --purge .build-deps \
     && rm -rf /root/.cache /root/.cargo /tmp/*
 
+COPY ./apps/bazarr/config.yaml /app/config.yaml
 COPY ./apps/bazarr/entrypoint.sh /entrypoint.sh
 COPY --from=ghcr.io/linuxserver/unrar:latest /usr/bin/unrar-alpine /usr/bin/unrar
 
