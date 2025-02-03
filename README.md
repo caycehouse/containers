@@ -112,6 +112,7 @@ Container | Channel | Image
 [calibre-web](https://github.com/caycehouse/containers/pkgs/container/calibre-web) | stable | ghcr.io/caycehouse/calibre-web
 [cni-plugins](https://github.com/caycehouse/containers/pkgs/container/cni-plugins) | stable | ghcr.io/caycehouse/cni-plugins
 [home-assistant](https://github.com/caycehouse/containers/pkgs/container/home-assistant) | stable | ghcr.io/caycehouse/home-assistant
+[jbops](https://github.com/caycehouse/containers/pkgs/container/jbops) | stable | ghcr.io/caycehouse/jbops
 [plex](https://github.com/caycehouse/containers/pkgs/container/plex) | stable | ghcr.io/caycehouse/plex
 [postgres-init](https://github.com/caycehouse/containers/pkgs/container/postgres-init) | stable | ghcr.io/caycehouse/postgres-init
 [prowlarr](https://github.com/caycehouse/containers/pkgs/container/prowlarr) | master | ghcr.io/caycehouse/prowlarr
