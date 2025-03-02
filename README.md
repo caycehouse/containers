@@ -110,10 +110,8 @@ Container | Channel | Image
 [actions-runner](https://github.com/caycehouse/containers/pkgs/container/actions-runner) | stable | ghcr.io/caycehouse/actions-runner
 [cni-plugins](https://github.com/caycehouse/containers/pkgs/container/cni-plugins) | stable | ghcr.io/caycehouse/cni-plugins
 [home-assistant](https://github.com/caycehouse/containers/pkgs/container/home-assistant) | stable | ghcr.io/caycehouse/home-assistant
-[jbops](https://github.com/caycehouse/containers/pkgs/container/jbops) | stable | ghcr.io/caycehouse/jbops
 [plex](https://github.com/caycehouse/containers/pkgs/container/plex) | stable | ghcr.io/caycehouse/plex
 [postgres-init](https://github.com/caycehouse/containers/pkgs/container/postgres-init) | stable | ghcr.io/caycehouse/postgres-init
-[tautulli](https://github.com/caycehouse/containers/pkgs/container/tautulli) | master | ghcr.io/caycehouse/tautulli
 
 
 ## Deprecations
