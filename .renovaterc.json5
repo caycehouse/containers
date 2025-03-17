@@ -16,8 +16,5 @@
     ":timezone(America/New_York)",
   ],
   dependencyDashboardTitle: "Renovate Dashboard 🤖",
-  suppressNotifications: [
-    "prEditedNotification",
-    "prIgnoreNotification"
-  ],
+  suppressNotifications: ["prEditedNotification", "prIgnoreNotification"],
 }

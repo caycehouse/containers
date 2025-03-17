@@ -1,4 +1,5 @@
 ---
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: Image Build
 
 on:
@@ -36,8 +37,8 @@ jobs:
         uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
         with:
           registry: ghcr.io
-          username: "${{ github.actor }}"
-          password: "${{ github.token }}"
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@b5ca514318bd6ebac0fb2aedd5d36ec1b5c232a2 # v3.10.0
@@ -76,20 +77,20 @@ jobs:
               echo "tool=cst" >> $GITHUB_OUTPUT
           fi
 
-      - name: Run container-structure-test
-        if: ${{ steps.test.outputs.tool == 'cst' }}
+      - if: ${{ steps.test.outputs.tool == 'cst' }}
+        name: Run container-structure-test
         uses: docker://ghcr.io/googlecontainertools/container-structure-test:1.19.3
         with:
-          args: test --image ${{ steps.build.outputs.imageid }} --config /github/workspace/apps/${{ inputs.app }}/tests.yaml
+          args: test --image ${{ steps.build.outputs.imageid }} --config ./apps/${{ inputs.app }}/tests.yaml
 
-      - name: Setup goss
-        if: ${{ steps.test.outputs.tool == 'goss' }}
+      - if: ${{ steps.test.outputs.tool == 'goss' }}
+        name: Setup goss
         uses: mlipscombe/goss-installation-action@a440e50e0ca070a5b84fc4b99a4e2bc7f9390201 # v1.2.2
         with:
           version: latest
 
-      - name: Run goss
-        if: ${{ steps.test.outputs.tool == 'goss' }}
+      - if: ${{ steps.test.outputs.tool == 'goss' }}
+        name: Run goss
         env:
           CONTAINER_RUNTIME: docker
           GOSS_FILE: ./apps/${{ inputs.app }}/tests.yaml
@@ -97,7 +98,8 @@ jobs:
           GOSS_SLEEP: 2
           GOSS_FILES_STRATEGY: cp
           CONTAINER_LOG_OUTPUT: goss_container_log_output
-        run: dgoss run ${{ steps.build.outputs.imageid }}
+        run: |
+          dgoss run ${{ steps.build.outputs.imageid }}
 
       - if: ${{ inputs.release }}
         name: Export Digest
@@ -115,8 +117,8 @@ jobs:
         uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
         with:
           registry: ghcr.io
-          username: "${{ github.actor }}"
-          password: "${{ github.token }}"
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
 
       - name: Setup Node
         uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
@@ -136,20 +138,20 @@ jobs:
             return semver.valid(`${version}`) !== null;
 
       - name: Build Meta
-        id: meta
         uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804 # v5.7.0
+        id: meta
         with:
           flavor: latest=false
           images: ghcr.io/${{ github.repository_owner }}/${{ inputs.app }}
           tags: |
-            type=match,pattern=^v?(\d+(\.\d+)?(\.\d+)?(\.\d+)?),value=${{ inputs.version }}
-            type=match,pattern=^v?(\d+(\.\d+)),value=${{ inputs.version }},enable=${{ steps.semver.outputs.result }}
-            type=match,pattern=^v?(\d+),value=${{ inputs.version }},enable=${{ steps.semver.outputs.result }}
+            type=match,pattern=^v?(\d+(\.\d+)?(\.\d+)?(\.\d+)?),group=1,value=${{ inputs.version }}
+            type=match,pattern=^v?(\d+(\.\d+)),value=${{ inputs.version }},group=1,enable=${{ steps.semver.outputs.result }}
+            type=match,pattern=^v?(\d+),value=${{ inputs.version }},group=1,enable=${{ steps.semver.outputs.result }}
             type=raw,value=rolling
 
       - name: Push Images
-        id: push
         uses: Noelware/docker-manifest-action@b33ab348026b120a895167160f5605b0197f0862 # 0.4.3
+        id: push
         with:
           inputs: ${{ join(fromJSON(steps.meta.outputs.json).tags, ',') }}
           images: >-
