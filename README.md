@@ -1,9 +1,4 @@
-<!---
-NOTE: AUTO-GENERATED FILE
-to edit this file, instead edit its template at: ./scripts/templates/README.md.j2
--->
 <div align="center">
-
 
 ## Containers
 
@@ -15,7 +10,7 @@ _An opinionated collection of container images_
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/caycehouse/containers?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/caycehouse/containers?style=for-the-badge)
-![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/caycehouse/containers/release-scheduled.yaml?style=for-the-badge&label=Scheduled%20Release)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/caycehouse/containers/release.yaml?style=for-the-badge&label=Release)
 
 </div>
 
@@ -41,6 +36,10 @@ We do take a similar approach but instead of appending a `-ls69` or `-r420` pref
 | `ghcr.io/caycehouse/home-assistant:2024.5.2@sha256:76e4...` | ✅         |
 
 _If pinning an image to the sha256 digest, tools like [Renovate](https://github.com/renovatebot/renovate) support updating the container on a digest or application version change._
+
+## Eschewed features
+
+There is no multiple "channels" of the same application.
 
 ## Rootless
 
@@ -101,19 +100,6 @@ Some applications do not support defining configuration via environment variable
 
 For applications that need to have persistent configuration data the config volume is hardcoded to `/config` inside the container. This is not able to be changed in most cases.
 
-## Available Images
-
-Each Image will be built with a `rolling` tag, along with tags specific to it's version. Available Images Below
-
-Container | Channel | Image
---- | --- | ---
-[actions-runner](https://github.com/caycehouse/containers/pkgs/container/actions-runner) | stable | ghcr.io/caycehouse/actions-runner
-[cni-plugins](https://github.com/caycehouse/containers/pkgs/container/cni-plugins) | stable | ghcr.io/caycehouse/cni-plugins
-[home-assistant](https://github.com/caycehouse/containers/pkgs/container/home-assistant) | stable | ghcr.io/caycehouse/home-assistant
-[plex](https://github.com/caycehouse/containers/pkgs/container/plex) | stable | ghcr.io/caycehouse/plex
-[postgres-init](https://github.com/caycehouse/containers/pkgs/container/postgres-init) | stable | ghcr.io/caycehouse/postgres-init
-
-
 ## Deprecations
 
 Containers here can be **deprecated** at any point, this could be for any reason described below.
@@ -127,4 +113,4 @@ Containers here can be **deprecated** at any point, this could be for any reason
 
 ## Credits
 
-A lot of inspiration and ideas are thanks to the hard work of [onedr0p](https://github.com/onedr0p), [hotio.dev](https://hotio.dev/) and [linuxserver.io](https://www.linuxserver.io/) contributors.
+A lot of inspiration and ideas are thanks to the hard work of the home-ops community, [hotio.dev](https://hotio.dev/) and [linuxserver.io](https://www.linuxserver.io/) contributors.
