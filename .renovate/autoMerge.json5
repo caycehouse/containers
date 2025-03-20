@@ -8,15 +8,5 @@
       automergeType: "pr",
       ignoreTests: false,
     },
-    {
-      description: ["Auto-merge GitHub Actions"],
-      matchDatasources: ["github-tags"],
-      matchManagers: ["github-actions"],
-      automerge: true,
-      automergeType: "branch",
-      matchUpdateTypes: ["minor", "patch"],
-      minimumReleaseAge: "3 days",
-      ignoreTests: true,
-    },
   ],
 }
