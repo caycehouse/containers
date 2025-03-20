@@ -65,7 +65,7 @@ jobs:
             const yaml = require('yaml');
             const cwd = process.cwd();
 
-            let input =
+            const input =
               context.eventName === 'workflow_dispatch'
                 ? '${{ inputs.app }}'
                 : '${{ needs.pre-job.outputs.all_changed_and_modified_files }}';
@@ -96,9 +96,12 @@ jobs:
     name: Build ${{ matrix.app.name }}
     uses: ./.github/workflows/image-build-action.yaml
     permissions:
+      attestations: write
       contents: read
       id-token: write
       packages: write
+      security-events: write
+    secrets: inherit
     strategy:
       matrix:
         app: ${{ fromJSON(needs.changed.outputs.apps) }}
