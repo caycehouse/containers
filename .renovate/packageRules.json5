@@ -1,0 +1,11 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  packageRules: [
+    {
+      description: ["Allowed Ubuntu versions for all container images"],
+      matchDatasources: ["docker"],
+      matchPackageNames: ["/ubuntu/"],
+      allowedVersions: "/24\\.04/",
+    },
+  ],
+}

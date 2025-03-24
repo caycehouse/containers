@@ -5,5 +5,6 @@
     "github>caycehouse/containers//.renovate/autoMerge.json5",
     "github>caycehouse/containers//.renovate/customDatasources.json5",
     "github>caycehouse/containers//.renovate/customManagers.json5",
+    "github>caycehouse/containers//.renovate/packageRules.json5",
   ],
 }
